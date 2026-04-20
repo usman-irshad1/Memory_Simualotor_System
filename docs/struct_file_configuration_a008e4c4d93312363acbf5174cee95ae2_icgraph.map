@@ -1,0 +1,13 @@
+<map id="FileConfiguration::FileParser" name="FileConfiguration::FileParser">
+<area shape="rect" id="Node000001" title=" " alt="" coords="320,72,447,115"/>
+<area shape="rect" id="Node000002" href="$struct_virtual___memory__manager.html#a61742b1bab01707169548f7af30fed3e" title=" " alt="" coords="103,5,272,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="302,67,252,51,253,46,308,66"/>
+<area shape="rect" id="Node000004" href="$struct_virtual___memory__manager.html#a84b76eb921b181cc80995f71d994e42c" title=" " alt="" coords="103,72,272,115"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="302,94,273,96,272,91,307,93"/>
+<area shape="rect" id="Node000005" href="$struct_virtual___memory__manager.html#acea421a8f58bdfc3ddaf10fee33822e5" title=" " alt="" coords="103,139,272,181"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="308,119,253,141,252,135,302,121"/>
+<area shape="rect" id="Node000003" href="$_o_s__project_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,80,55,107"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="114,56,104,62,56,84,53,80,102,58,118,53"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="85,95,56,96,54,91,89,92"/>
+<area shape="poly" id="edge6_Node000005_Node000003" title=" " alt="" coords="113,132,102,129,55,107,55,102,104,124,118,132"/>
+</map>
