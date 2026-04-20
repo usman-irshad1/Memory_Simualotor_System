@@ -1,0 +1,7 @@
+.vs/
+x64/
+*.txt
+log
+FIFO_logging
+HardDisk
+OPT_logging

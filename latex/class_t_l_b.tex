@@ -1,0 +1,122 @@
+\doxysection{TLB Class Reference}
+\hypertarget{class_t_l_b}{}\label{class_t_l_b}\index{TLB@{TLB}}
+
+
+{\ttfamily \+\#include $<$TLB\+\_\+table.\+h$>$}
+
+
+
+Collaboration diagram for TLB:\+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=203pt]{class_t_l_b__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{class_t_l_b_adb95da018aae91ee6ff67db557c7b4e3}{TLB}} (\doxymbox{\hyperlink{struct_file_configuration}{File\+Configuration}} \&config)
+\item 
+void \doxymbox{\hyperlink{class_t_l_b_a714df63003cc57627c84fa47135b574d}{View\+\_\+table}} ()
+\item 
+void \doxymbox{\hyperlink{class_t_l_b_a07e223fbb12f9cd423bc1996411bdc15}{Insert\+\_\+with\+\_\+\+FIFO\+\_\+algo}} (unsigned long long virtual\+\_\+address\+\_\+key, unsigned long long physical\+\_\+memory\+\_\+value, bool valid\+\_\+bit\+\_\+value)
+\item 
+void \doxymbox{\hyperlink{class_t_l_b_a9a740409b977bdca99df6a697e59376f}{insert\+\_\+with\+\_\+\+LRU\+\_\+algo}} (unsigned long long virtual\+\_\+address\+\_\+key, unsigned long long physical\+\_\+memory\+\_\+frame, bool valid\+\_\+bit\+\_\+value)
+\item 
+bool \doxymbox{\hyperlink{class_t_l_b_ac184e51e58504f10d4a4662f10d0ac89}{find}} (unsigned long long virtual\+\_\+address\+\_\+key, unsigned long long \&physical\+\_\+memory\+\_\+value)
+\item 
+void \doxymbox{\hyperlink{class_t_l_b_a49ed434d8bf0d47b2428d4ae4c5a42b1}{perfomance\+\_\+metrics}} (unsigned long long ram\+\_\+latency, int total\+\_\+ram\+\_\+writes, int dirty\+\_\+evictions)
+\item 
+int \doxymbox{\hyperlink{class_t_l_b_ac8258805fe0d0cc736666702f2519a6e}{get\+File\+Count}} ()
+\item 
+void \doxymbox{\hyperlink{class_t_l_b_a3ced53e273a93ffc4c8c800e2ae2177a}{TLB\+\_\+\+Eviction}} (unsigned long long vpn)
+\end{DoxyCompactItemize}
+
+
+\label{doc-constructors}
+\Hypertarget{class_t_l_b_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_t_l_b_adb95da018aae91ee6ff67db557c7b4e3}\index{TLB@{TLB}!TLB@{TLB}}
+\index{TLB@{TLB}!TLB@{TLB}}
+\doxysubsubsection{\texorpdfstring{TLB()}{TLB()}}
+{\footnotesize\ttfamily \label{class_t_l_b_adb95da018aae91ee6ff67db557c7b4e3} 
+TLB::\+\+TLB (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{struct_file_configuration}{File\+Configuration}} \&}]{config}{}\end{DoxyParamCaption})}
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_t_l_b_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_t_l_b_ac184e51e58504f10d4a4662f10d0ac89}\index{TLB@{TLB}!find@{find}}
+\index{find@{find}!TLB@{TLB}}
+\doxysubsubsection{\texorpdfstring{find()}{find()}}
+{\footnotesize\ttfamily \label{class_t_l_b_ac184e51e58504f10d4a4662f10d0ac89} 
+bool TLB::\+find (\begin{DoxyParamCaption}\item[{unsigned long long}]{virtual\+\_\+address\+\_\+key}{, }\item[{unsigned long long \&}]{physical\+\_\+memory\+\_\+value}{}\end{DoxyParamCaption})}
+
+Here is the caller graph for this function:\+
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_t_l_b_ac184e51e58504f10d4a4662f10d0ac89_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_t_l_b_ac8258805fe0d0cc736666702f2519a6e}\index{TLB@{TLB}!getFileCount@{getFileCount}}
+\index{getFileCount@{getFileCount}!TLB@{TLB}}
+\doxysubsubsection{\texorpdfstring{getFileCount()}{getFileCount()}}
+{\footnotesize\ttfamily \label{class_t_l_b_ac8258805fe0d0cc736666702f2519a6e} 
+int TLB::\+get\+File\+Count (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_t_l_b_a07e223fbb12f9cd423bc1996411bdc15}\index{TLB@{TLB}!Insert\_with\_FIFO\_algo@{Insert\_with\_FIFO\_algo}}
+\index{Insert\_with\_FIFO\_algo@{Insert\_with\_FIFO\_algo}!TLB@{TLB}}
+\doxysubsubsection{\texorpdfstring{Insert\_with\_FIFO\_algo()}{Insert\_with\_FIFO\_algo()}}
+{\footnotesize\ttfamily \label{class_t_l_b_a07e223fbb12f9cd423bc1996411bdc15} 
+void TLB::\+\+Insert\+\_\+with\+\_\+\+FIFO\+\_\+algo (\begin{DoxyParamCaption}\item[{unsigned long long}]{virtual\+\_\+address\+\_\+key}{, }\item[{unsigned long long}]{physical\+\_\+memory\+\_\+value}{, }\item[{bool}]{valid\+\_\+bit\+\_\+value}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_t_l_b_a9a740409b977bdca99df6a697e59376f}\index{TLB@{TLB}!insert\_with\_LRU\_algo@{insert\_with\_LRU\_algo}}
+\index{insert\_with\_LRU\_algo@{insert\_with\_LRU\_algo}!TLB@{TLB}}
+\doxysubsubsection{\texorpdfstring{insert\_with\_LRU\_algo()}{insert\_with\_LRU\_algo()}}
+{\footnotesize\ttfamily \label{class_t_l_b_a9a740409b977bdca99df6a697e59376f} 
+void TLB::\+insert\+\_\+with\+\_\+\+LRU\+\_\+algo (\begin{DoxyParamCaption}\item[{unsigned long long}]{virtual\+\_\+address\+\_\+key}{, }\item[{unsigned long long}]{physical\+\_\+memory\+\_\+frame}{, }\item[{bool}]{valid\+\_\+bit\+\_\+value}{}\end{DoxyParamCaption})}
+
+Here is the caller graph for this function:\+
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_t_l_b_a9a740409b977bdca99df6a697e59376f_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_t_l_b_a49ed434d8bf0d47b2428d4ae4c5a42b1}\index{TLB@{TLB}!perfomance\_metrics@{perfomance\_metrics}}
+\index{perfomance\_metrics@{perfomance\_metrics}!TLB@{TLB}}
+\doxysubsubsection{\texorpdfstring{perfomance\_metrics()}{perfomance\_metrics()}}
+{\footnotesize\ttfamily \label{class_t_l_b_a49ed434d8bf0d47b2428d4ae4c5a42b1} 
+void TLB::\+perfomance\+\_\+metrics (\begin{DoxyParamCaption}\item[{unsigned long long}]{ram\+\_\+latency}{, }\item[{int}]{total\+\_\+ram\+\_\+writes}{, }\item[{int}]{dirty\+\_\+evictions}{}\end{DoxyParamCaption})}
+
+Here is the caller graph for this function:\+
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_t_l_b_a49ed434d8bf0d47b2428d4ae4c5a42b1_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_t_l_b_a3ced53e273a93ffc4c8c800e2ae2177a}\index{TLB@{TLB}!TLB\_Eviction@{TLB\_Eviction}}
+\index{TLB\_Eviction@{TLB\_Eviction}!TLB@{TLB}}
+\doxysubsubsection{\texorpdfstring{TLB\_Eviction()}{TLB\_Eviction()}}
+{\footnotesize\ttfamily \label{class_t_l_b_a3ced53e273a93ffc4c8c800e2ae2177a} 
+void TLB::\+\+TLB\+\_\+\+Eviction (\begin{DoxyParamCaption}\item[{unsigned long long}]{vpn}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_t_l_b_a714df63003cc57627c84fa47135b574d}\index{TLB@{TLB}!View\_table@{View\_table}}
+\index{View\_table@{View\_table}!TLB@{TLB}}
+\doxysubsubsection{\texorpdfstring{View\_table()}{View\_table()}}
+{\footnotesize\ttfamily \label{class_t_l_b_a714df63003cc57627c84fa47135b574d} 
+void TLB::\+\+View\+\_\+table (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+The documentation for this class was generated from the following files:\+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{_t_l_b__table_8h}{TLB\+\_\+table.\+h}}\item 
+\doxymbox{\hyperlink{_t_l_b__table_8cpp}{TLB\+\_\+table.\+cpp}}\end{DoxyCompactItemize}

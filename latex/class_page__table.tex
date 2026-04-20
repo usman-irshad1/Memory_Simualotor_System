@@ -1,0 +1,122 @@
+\doxysection{Page\+\_\+table Class Reference}
+\hypertarget{class_page__table}{}\label{class_page__table}\index{Page\_table@{Page\_table}}
+
+
+{\ttfamily \+\#include $<$Page\+\_\+frame.\+h$>$}
+
+
+
+Collaboration diagram for Page\+\_\+table:\+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=191pt]{class_page__table__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{class_page__table_af9db69100651bb25db1ad9166f4f2808}{Page\+\_\+table}} (\doxymbox{\hyperlink{struct_file_configuration}{File\+Configuration}} \&config)
+\item 
+unsigned long long \doxymbox{\hyperlink{class_page__table_ac6e476d9a311fc7aa481454b0b463620}{get\+Physical\+Address}} (unsigned long long vpn, unsigned long long offset, bool for\+\_\+writing, \doxymbox{\hyperlink{class_t_l_b}{TLB}} \&l1, char w=\textquotesingle{}W\textquotesingle{})
+\item 
+int \doxymbox{\hyperlink{class_page__table_a42f91c3c8b6cbca5b826c21972ab476d}{get\+Frame\+\_\+count}} ()
+\item 
+void \doxymbox{\hyperlink{class_page__table_a4e7fb71c8d7533b33e603865c4bb2739}{display}} ()
+\item 
+void \doxymbox{\hyperlink{class_page__table_a77a13706e002f94738fa59ccb0699529}{display\+Ram}} ()
+\item 
+\doxymbox{\hyperlink{class_page__table_a6a34494b7776f9f2a62b76d860aba7ac}{\texorpdfstring{$\sim$}{\string~}\+Page\+\_\+table}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \doxymbox{\hyperlink{class_page__table_a18318df3a68151c411e0c51003e45e0f}{dirty\+\_\+evictions}}
+\item 
+int \doxymbox{\hyperlink{class_page__table_a4e421513907fdea67c943fb0d5937942}{ram\+\_\+write\+\_\+count}}
+\end{DoxyCompactItemize}
+
+
+\label{doc-constructors}
+\Hypertarget{class_page__table_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_page__table_af9db69100651bb25db1ad9166f4f2808}\index{Page\_table@{Page\_table}!Page\_table@{Page\_table}}
+\index{Page\_table@{Page\_table}!Page\_table@{Page\_table}}
+\doxysubsubsection{\texorpdfstring{Page\_table()}{Page\_table()}}
+{\footnotesize\ttfamily \label{class_page__table_af9db69100651bb25db1ad9166f4f2808} 
+Page\+\_\+table::\+\+Page\+\_\+table (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{struct_file_configuration}{File\+Configuration}} \&}]{config}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_page__table_a6a34494b7776f9f2a62b76d860aba7ac}\index{Page\_table@{Page\_table}!````~Page\_table@{\texorpdfstring{$\sim$}{\string~}Page\_table}}
+\index{````~Page\_table@{\texorpdfstring{$\sim$}{\string~}Page\_table}!Page\_table@{Page\_table}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Page\_table()}{\string~Page\_table()}}
+{\footnotesize\ttfamily \label{class_page__table_a6a34494b7776f9f2a62b76d860aba7ac} 
+Page\+\_\+table::\+\texorpdfstring{$\sim$}{\string~}\+Page\+\_\+table (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_page__table_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_page__table_a4e7fb71c8d7533b33e603865c4bb2739}\index{Page\_table@{Page\_table}!display@{display}}
+\index{display@{display}!Page\_table@{Page\_table}}
+\doxysubsubsection{\texorpdfstring{display()}{display()}}
+{\footnotesize\ttfamily \label{class_page__table_a4e7fb71c8d7533b33e603865c4bb2739} 
+void Page\+\_\+table::\+display (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_page__table_a77a13706e002f94738fa59ccb0699529}\index{Page\_table@{Page\_table}!displayRam@{displayRam}}
+\index{displayRam@{displayRam}!Page\_table@{Page\_table}}
+\doxysubsubsection{\texorpdfstring{displayRam()}{displayRam()}}
+{\footnotesize\ttfamily \label{class_page__table_a77a13706e002f94738fa59ccb0699529} 
+void Page\+\_\+table::\+display\+Ram (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_page__table_a42f91c3c8b6cbca5b826c21972ab476d}\index{Page\_table@{Page\_table}!getFrame\_count@{getFrame\_count}}
+\index{getFrame\_count@{getFrame\_count}!Page\_table@{Page\_table}}
+\doxysubsubsection{\texorpdfstring{getFrame\_count()}{getFrame\_count()}}
+{\footnotesize\ttfamily \label{class_page__table_a42f91c3c8b6cbca5b826c21972ab476d} 
+int Page\+\_\+table::\+get\+Frame\+\_\+count (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Here is the caller graph for this function:\+
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_page__table_a42f91c3c8b6cbca5b826c21972ab476d_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_page__table_ac6e476d9a311fc7aa481454b0b463620}\index{Page\_table@{Page\_table}!getPhysicalAddress@{getPhysicalAddress}}
+\index{getPhysicalAddress@{getPhysicalAddress}!Page\_table@{Page\_table}}
+\doxysubsubsection{\texorpdfstring{getPhysicalAddress()}{getPhysicalAddress()}}
+{\footnotesize\ttfamily \label{class_page__table_ac6e476d9a311fc7aa481454b0b463620} 
+unsigned long long Page\+\_\+table::\+get\+Physical\+Address (\begin{DoxyParamCaption}\item[{unsigned long long}]{vpn}{, }\item[{unsigned long long}]{offset}{, }\item[{bool}]{for\+\_\+writing}{, }\item[{\doxymbox{\hyperlink{class_t_l_b}{TLB}} \&}]{l1}{, }\item[{char}]{w}{ = {\ttfamily \textquotesingle{}W\textquotesingle{}}}\end{DoxyParamCaption})}
+
+Here is the caller graph for this function:\+
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_page__table_ac6e476d9a311fc7aa481454b0b463620_icgraph}
+\end{center}
+\end{figure}
+
+
+\label{doc-variable-members}
+\Hypertarget{class_page__table_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_page__table_a18318df3a68151c411e0c51003e45e0f}\index{Page\_table@{Page\_table}!dirty\_evictions@{dirty\_evictions}}
+\index{dirty\_evictions@{dirty\_evictions}!Page\_table@{Page\_table}}
+\doxysubsubsection{\texorpdfstring{dirty\_evictions}{dirty\_evictions}}
+{\footnotesize\ttfamily \label{class_page__table_a18318df3a68151c411e0c51003e45e0f} 
+int Page\+\_\+table::\+dirty\+\_\+evictions}
+
+\Hypertarget{class_page__table_a4e421513907fdea67c943fb0d5937942}\index{Page\_table@{Page\_table}!ram\_write\_count@{ram\_write\_count}}
+\index{ram\_write\_count@{ram\_write\_count}!Page\_table@{Page\_table}}
+\doxysubsubsection{\texorpdfstring{ram\_write\_count}{ram\_write\_count}}
+{\footnotesize\ttfamily \label{class_page__table_a4e421513907fdea67c943fb0d5937942} 
+int Page\+\_\+table::\+ram\+\_\+write\+\_\+count}
+
+
+
+The documentation for this class was generated from the following files:\+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{_page__frame_8h}{Page\+\_\+frame.\+h}}\item 
+\doxymbox{\hyperlink{_page__frame_8cpp}{Page\+\_\+frame.\+cpp}}\end{DoxyCompactItemize}

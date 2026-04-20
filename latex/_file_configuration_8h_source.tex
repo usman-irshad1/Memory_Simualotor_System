@@ -1,0 +1,31 @@
+\doxysection{File\+Configuration.\+h}
+\hypertarget{_file_configuration_8h_source}{}\label{_file_configuration_8h_source}\doxymbox{\hyperlink{_file_configuration_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <cmath>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <fstream>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <json/json.h>}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{struct\ }\doxymbox{\hyperlink{struct_file_configuration}{FileConfiguration}}\ \{}
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ \doxymbox{\hyperlink{struct_file_configuration_a058fa1b738c70e9f85d24b6aa4dc6565}{physical\_size}};}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ \doxymbox{\hyperlink{struct_file_configuration_a11c64822271e5a06eae9f2fd8d4aae9e}{page\_size}};}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ \doxymbox{\hyperlink{struct_file_configuration_a1862a00f413202ce462a20ea11557c6c}{TLB\_size}};}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ \doxymbox{\hyperlink{struct_file_configuration_a3df614a958c014065db3a6a2456f6705}{virtual\_size}};}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ \doxymbox{\hyperlink{struct_file_configuration_a83793d02f6190b74a7353b9406aadec9}{latency}};}
+\DoxyCodeLine{00017\ \ \ \ \ vector<unsigned\ long\ long>\ \doxymbox{\hyperlink{struct_file_configuration_a1bc18aeffd851a643b73313c9fee5e07}{actual\_adress}};}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{int}\ \doxymbox{\hyperlink{struct_file_configuration_ab43acba8d9d17326b04118e9293b2663}{No\_of\_bits\_to\_be\_shifted}}();}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ \doxymbox{\hyperlink{struct_file_configuration_a3506cceeda4e229e14590e0f6a40d35c}{getVirtual\_page\_number}}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ address);}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ \doxymbox{\hyperlink{struct_file_configuration_a67365063c1cc7c04bc5bab73af14c817}{offset}}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ address);}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{struct_file_configuration_a008e4c4d93312363acbf5174cee95ae2}{FileParser}}();}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{struct_file_configuration_abe3f5e89da6b151be1c7be61daf7823e}{Display}}();}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{struct_file_configuration_ac321edb3b8eddc5cb52711678333a15f}{Reading\_Addresses}}();}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{struct_file_configuration_a7feef28112cafbda4a054c3647bc65be}{Writing}}();}
+\DoxyCodeLine{00026\ \};}
+
+\end{DoxyCode}

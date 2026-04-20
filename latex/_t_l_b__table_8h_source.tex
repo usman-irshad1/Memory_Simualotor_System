@@ -1,0 +1,49 @@
+\doxysection{TLB\+\_\+table.\+h}
+\hypertarget{_t_l_b__table_8h_source}{}\label{_t_l_b__table_8h_source}\doxymbox{\hyperlink{_t_l_b__table_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <unordered\_map>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <list>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <algorithm>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <cmath>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{_file_configuration_8h}{FileConfiguration.h}}"{}}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{struct\ }\doxymbox{\hyperlink{struct_value_abc2a5a2e6484fac66dae2539cc955667}{Value}}\ \{}
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ \doxymbox{\hyperlink{struct_value_a1a9b10ae4d15b5e2b9ed5e6157519729}{physical\_memory}};}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{struct_value_a1df0a3494447ef7b9c48c382f4703a6a}{valid\_bit}};}
+\DoxyCodeLine{00014\ \ \ \ \ \doxymbox{\hyperlink{struct_value_abc2a5a2e6484fac66dae2539cc955667}{Value}}();}
+\DoxyCodeLine{00015\ \};}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{class_t_l_b_adb95da018aae91ee6ff67db557c7b4e3}{TLB}}\ \{}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ cap;}
+\DoxyCodeLine{00019\ \ \ \ \ unordered\_map<unsigned\ long\ long,\ Value>\ table;}
+\DoxyCodeLine{00020\ \ \ \ \ list<unsigned\ long\ long>\ index\_for\_FIFO;}
+\DoxyCodeLine{00021\ \ \ \ \ unordered\_map<unsigned\ long\ long,\ typename\ list<unsigned\ long\ long>::iterator>\ LRU\_map;}
+\DoxyCodeLine{00022\ \ \ \ \ list<unsigned\ long\ long>\ LRU\_queue;}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{int}\ request;}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{int}\ tlb\_hits;}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{int}\ tlb\_misses;}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{int}\ count;}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00029\ \ \ \ \ \doxymbox{\hyperlink{class_t_l_b_adb95da018aae91ee6ff67db557c7b4e3}{TLB}}(\doxymbox{\hyperlink{struct_file_configuration}{FileConfiguration}}\&\ config);}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_t_l_b_a714df63003cc57627c84fa47135b574d}{View\_table}}();}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_t_l_b_a07e223fbb12f9cd423bc1996411bdc15}{Insert\_with\_FIFO\_algo}}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ virtual\_address\_key,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ physical\_memory\_value,\ \textcolor{keywordtype}{bool}\ valid\_bit\_value);}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_t_l_b_a9a740409b977bdca99df6a697e59376f}{insert\_with\_LRU\_algo}}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ virtual\_address\_key,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ physical\_memory\_frame,\ \textcolor{keywordtype}{bool}\ valid\_bit\_value);}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{class_t_l_b_ac184e51e58504f10d4a4662f10d0ac89}{find}}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ virtual\_address\_key,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\&\ physical\_memory\_value);}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_t_l_b_a49ed434d8bf0d47b2428d4ae4c5a42b1}{perfomance\_metrics}}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ ram\_latency,\ \textcolor{keywordtype}{int}\ total\_ram\_writes,\ \textcolor{keywordtype}{int}\ dirty\_evictions);}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordtype}{int}\ \doxymbox{\hyperlink{class_t_l_b_ac8258805fe0d0cc736666702f2519a6e}{getFileCount}}();}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_t_l_b_a3ced53e273a93ffc4c8c800e2ae2177a}{TLB\_Eviction}}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ vpn);}
+\DoxyCodeLine{00044\ \};}
+
+\end{DoxyCode}
