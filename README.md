@@ -49,12 +49,12 @@ The simulator processes a stream of hexadecimal virtual addresses, translates th
 │              ┌──────▼──────┐      │                     │
 │              │     TLB     │      │                     │
 │              │  (4 entries)│      │                     │
-│              └──┬─────┬───┘      │                     │
-│            Hit  │     │ Miss     │                     │
-│              ┌──▼─────▼───┐      │                     │
-│              │ Page Table │      │                     │
-│              │ (FIFO/LRU/ │      │                     │
-│              │    OPT)    │      │                     │
+│              └──┬─────┬───┘      │                      │
+│            Hit  │     │ Miss     │                      │
+│              ┌──▼─────▼───┐      │                      │
+│              │ Page Table │      │                      │
+│              │ (FIFO/LRU/ │      │                      │
+│              │    OPT)    │      │                      │
 │              └──────┬──────┘      │                     │
 │                     │ Frame #     │                     │
 │              ┌──────▼─────────────▼───┐                 │
