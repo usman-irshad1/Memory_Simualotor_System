@@ -14,18 +14,25 @@ struct Value {
 	Value();
 };
 
+
+struct TLBVisualEntry { unsigned long long vpn; unsigned long long frame; bool active; };
+
+
+
 class TLB {
 	unsigned long long cap;
 	unordered_map<unsigned long long, Value> table;
 	list<unsigned long long> index_for_FIFO;
 	unordered_map<unsigned long long, typename list<unsigned long long>::iterator> LRU_map;
 	list<unsigned long long> LRU_queue;
+	
+
+public:
 	int request;
 	int tlb_hits;
 	int tlb_misses;
 	int count;
-
-public:
+	int lastEvictedSlot = -1;
 	TLB(FileConfiguration& config);
 
 	void View_table();
@@ -42,4 +49,27 @@ public:
 	bool findFIFOTLB(unsigned long long virtual_address_key, unsigned long long& physical_memory_value);
 
 	void TLB_Eviction(unsigned long long vpn);
+
+
+	TLBVisualEntry getEntryForVisual(int index) {
+		int currentIndex = 0;
+		
+		for (auto const& [vpn, val] : table) {
+			if (currentIndex == index) {
+				return { vpn, val.physical_memory, true };
+			}
+			currentIndex++;
+		}
+		return { 0, 0, false }; 
+	}
+
+	
+	int getVPNIndex(unsigned long long vpn) {
+		int index = 0;
+		for (auto const& [key, val] : table) {
+			if (key == vpn) return index;
+			index++;
+		}
+		return -1; 
+	}
 };
