@@ -38,6 +38,7 @@ Page_table::Page_table(FileConfiguration& config) :mind_palace(config) {
 			unsigned long long least_recently_used_vpn = LRU_queue.back();
 			list<unsigned long long >::iterator temp = LRU_map.at(least_recently_used_vpn);
 			unsigned long long page_to_rerefer = table.at(least_recently_used_vpn).physical_memory;
+			this->lastEvictedFrame = (int)page_to_rerefer;
 			
 			if (table.at(least_recently_used_vpn).dirty_bit == true) {
 				if (logging.is_open()) {
@@ -182,6 +183,7 @@ Page_table::Page_table(FileConfiguration& config) :mind_palace(config) {
 						max_vpn = current_vpn_in_table;
 					}
 				}
+				this->lastEvictedFrame = (int)table[max_vpn].physical_memory;
 				ofstream logging("OPT_logging", ios::app);
 				if (table[max_vpn].dirty_bit) {
 			
@@ -310,8 +312,10 @@ Page_table::Page_table(FileConfiguration& config) :mind_palace(config) {
 			else {//the TLB is full and we need to evict a page using FIFO
 				ram_read_count++;
 				unsigned long long page_to_evict_vpn = FIFO_queue.front();
+				
 				FIFO_queue.pop_front();
 				unsigned long long frame = table[page_to_evict_vpn].physical_memory;
+				this->lastEvictedFrame = (int)frame;
 				ofstream logging("FIFO_logging.txt", ios::app);
 				if (table[page_to_evict_vpn].dirty_bit) {
 					if (table[page_to_evict_vpn].dirty_bit == 1) {
@@ -335,6 +339,7 @@ Page_table::Page_table(FileConfiguration& config) :mind_palace(config) {
 						logging << "EVICTION NOTICE : VPN " << page_to_evict_vpn << " was clean no need to write back to Disk" << endl;
 					}
 				}
+
 				l1.TLB_Eviction(page_to_evict_vpn);
 				table.erase(page_to_evict_vpn);
 				Page_frame_node temp;
