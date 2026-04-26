@@ -128,7 +128,9 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="ADRESS_POP.cpp" />
+    <ClCompile Include="Drawer.cpp" />
     <ClCompile Include="FileConfiguration.cpp" />
+    <ClCompile Include="mem_visualization.cpp" />
     <ClCompile Include="OS_project.cpp" />
     <ClCompile Include="Page_frame.cpp" />
     <ClCompile Include="Ram_memory.cpp" />
@@ -141,7 +143,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ADRESS_POP.h" />
+    <ClInclude Include="Drawer.h" />
     <ClInclude Include="FileConfiguration.h" />
+    <ClInclude Include="mem_visualization.h" />
     <ClInclude Include="Page_frame.h" />
     <ClInclude Include="Ram_memory.h" />
     <ClInclude Include="TLB_table.h" />
