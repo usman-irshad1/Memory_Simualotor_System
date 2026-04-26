@@ -14,7 +14,7 @@ void Virtual_Memory_manager::  Runner() {
         unsigned long long frame_address;
         TLB cache(config);
         Page_table pages(config);
-
+      
 
         config.Reading_Addresses();
         int instruction_count = 0;
