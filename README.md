@@ -49,12 +49,12 @@ The simulator processes a stream of hexadecimal virtual addresses, translates th
 │              ┌──────▼──────┐      │                     │
 │              │     TLB     │      │                     │
 │              │  (4 entries)│      │                     │
-│              └──┬─────┬───┘      │                      │
-│            Hit  │     │ Miss     │                      │
-│              ┌──▼─────▼───┐      │                      │
-│              │ Page Table │      │                      │
-│              │ (FIFO/LRU/ │      │                      │
-│              │    OPT)    │      │                      │
+│              └──┬─────┬───┘       │                     │
+│            Hit  │     │ Miss      │                     │
+│              ┌──▼─────▼───┐       │                     │
+│              │ Page Table │       │                     │
+│              │ (FIFO/LRU/ │       │                     │
+│              │    OPT)    │       │                     │
 │              └──────┬──────┘      │                     │
 │                     │ Frame #     │                     │
 │              ┌──────▼─────────────▼───┐                 │
@@ -142,3 +142,13 @@ $$EAT = \frac{(Req \times 1ns) + (Miss \times 10ns) + (Reads \times Lat) + (Writ
 3.  **Eviction Cycle**: If RAM is full, the chosen algorithm selects a victim. If the **dirty bit** is set, it triggers a 1000ns write-back penalty to `HardDisk.txt`.
 4.  **Shutdown**: Upon termination, all remaining dirty pages are flushed to disk to ensure data persistence.
 ```
+
+**GUI OUTPUT**
+For FIFO:
+<img width="1198" height="835" alt="image" src="https://github.com/user-attachments/assets/a433b057-2621-418e-a7de-4a69d9d3acb4" />
+For LRU:
+<img width="1193" height="835" alt="image" src="https://github.com/user-attachments/assets/232974b2-fe8b-4b99-a04a-5ef854943688" />
+For OPT:
+<img width="1198" height="835" alt="image" src="https://github.com/user-attachments/assets/9d6ca13d-151d-443d-b409-1e34b80267df" />
+
+
