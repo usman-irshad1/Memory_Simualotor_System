@@ -38,6 +38,11 @@ TLB::TLB(FileConfiguration& config) {
 			count++;
 		}
 		else {
+			unsigned long long vpn_to_evict = index_for_FIFO.front();
+			int index = getVPNIndex(vpn_to_evict);
+			if (index != -1) {
+				lastEvictedSlot = index; 
+			}
 			table.erase(index_for_FIFO.front());
 			index_for_FIFO.pop_front();
 			table[virtual_address_key] = value;
@@ -66,7 +71,10 @@ TLB::TLB(FileConfiguration& config) {
 		}
 		else {
 			unsigned long long least_used = LRU_queue.back();
-
+			int index = getVPNIndex(least_used);
+			if (index != -1) {
+				lastEvictedSlot = index; 
+			}
 			LRU_queue.pop_back();
 			if (LRU_map.find(least_used) != LRU_map.end()) {
 				LRU_map.erase(least_used);
@@ -139,7 +147,7 @@ TLB::TLB(FileConfiguration& config) {
 
 		double total_time = 0;
 		total_time += (double)request * 1.0;                      // TLB lookup: 1 ns
-		total_time += (double)tlb_misses * 10.0;                    // TLB miss penalty: 10 ns (page table walk)
+		total_time += (double)tlb_misses * 10.0;                    // TLB miss penalty: 10 ns 
 		total_time += (double)total_ram_reads * ram_latency;      // RAM reads
 		total_time += (double)total_ram_writes * (ram_latency * 2); // RAM writes: 2x penalty
 		total_time += (double)dirty_evictions * 1000.0;           // Disk write-back: 1000 ns
@@ -164,7 +172,7 @@ TLB::TLB(FileConfiguration& config) {
 	}
 
 	void TLB:: TLB_Eviction(unsigned long long vpn) {
-
+		int index = getVPNIndex(vpn);
 		list<unsigned long long>::iterator temp_fifo = std::find(index_for_FIFO.begin(), index_for_FIFO.end(), vpn);
 		if (temp_fifo != index_for_FIFO.end()) {
 			index_for_FIFO.erase(temp_fifo);
@@ -181,7 +189,9 @@ TLB::TLB(FileConfiguration& config) {
 			LRU_queue.erase(LRU_map.at(vpn));
 			LRU_map.erase(vpn);
 		}
-
+		if (index != -1) {
+			lastEvictedSlot = index;
+		}
 		
 	}
 
