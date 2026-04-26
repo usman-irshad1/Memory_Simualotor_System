@@ -5,3 +5,6 @@ log
 FIFO_logging
 HardDisk
 OPT_logging
+OS_project/
+docs/html/
+docs/latex/
