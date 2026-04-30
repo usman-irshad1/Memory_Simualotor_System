@@ -146,11 +146,11 @@ TLB::TLB(FileConfiguration& config) {
 		unsigned long long tlb_misses = request - tlb_hits;
 
 		double total_time = 0;
-		total_time += (double)request * 1.0;                      // TLB lookup: 1 ns
+		total_time += (double)request * 1.0;                        // TLB lookup: 1 ns
 		total_time += (double)tlb_misses * 10.0;                    // TLB miss penalty: 10 ns 
-		total_time += (double)total_ram_reads * ram_latency;      // RAM reads
+		total_time += (double)total_ram_reads * ram_latency;        // RAM reads
 		total_time += (double)total_ram_writes * (ram_latency * 2); // RAM writes: 2x penalty
-		total_time += (double)dirty_evictions * 1000.0;           // Disk write-back: 1000 ns
+		total_time += (double)dirty_evictions * 1000.0;             // Disk write-back: 1000 ns
 
 		double eat = 0;
 		if (request > 0) {
@@ -195,8 +195,6 @@ TLB::TLB(FileConfiguration& config) {
 		
 	}
 
-
-	// ========================  OPT  (standalone TLB)  ========================
 
 	void TLB::OPT_LOOKAHEAD_INSERTION(FileConfiguration& config) {
 		OPT_lookahead_buffer.clear();
@@ -243,7 +241,7 @@ TLB::TLB(FileConfiguration& config) {
 			return;
 		}
 
-		// ---- TLB is full: find the entry used FARTHEST in the future ----
+
 		unsigned long long victim_vpn = table.begin()->first;
 		size_t max_distance = 0;
 		bool found_never_used = false;
