@@ -16,7 +16,7 @@ public:
     MemoryVisualizer(int width = 1200, int height = 800)
         : screenWidth(width), screenHeight(height) {
         InitWindow(screenWidth, screenHeight, "OS Virtual Memory Visualizer");
-        SetTargetFPS(240); // High FPS for smooth rendering
+        SetTargetFPS(1); // High FPS for smooth rendering
     }
 
     ~MemoryVisualizer() { CloseWindow(); }

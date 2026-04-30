@@ -15,7 +15,7 @@ Page_table::Page_table(FileConfiguration& config) :mind_palace(config) {
 			
 			ram_read_count++; // 1. reading the page from DISK to RAM
 			Page_frame_node frame;
-			frame.dirty_bit = for_writing;// we only need to uodate the hard disk here as other wise the data is already sysnced
+			frame.dirty_bit = for_writing;
 			frame.valid_bit = true;
 			frame.physical_memory = frame_count;
 			table[vpn] = frame;
@@ -228,7 +228,7 @@ Page_table::Page_table(FileConfiguration& config) :mind_palace(config) {
 		
 	}
 
-	void Page_table::LOOKAHEADINSERTION(FileConfiguration &config) { //this makes us a look ahead buffer for the task we are going to do next
+	void Page_table::LOOKAHEADINSERTION(FileConfiguration &config) { 
 		
 		
 		for (auto temp = config.actual_adress.begin(); temp != config.actual_adress.end(); temp++) {
@@ -257,7 +257,7 @@ Page_table::Page_table(FileConfiguration& config) :mind_palace(config) {
 
 
 	Page_table::~Page_table() {
-		cout << "\n--- FINAL SYSTEM SYNC (Flushing Remaining Dirty Pages) ---" << endl;
+		cout << "\n FINAL SYSTEM SYNC (Flushing Remaining Dirty Pages) " << endl;
 
 		ofstream outfile("HardDisk.txt", ios::app);
 		if (outfile.is_open()) {

@@ -14,5 +14,6 @@ using namespace std;
 struct Virtual_Memory_manager {
     void Runner();
     void SPRINTER();
+    void SPRINTER_OPT_TLB();   // OPT for both TLB and Page Frames
     void Walker();
 };

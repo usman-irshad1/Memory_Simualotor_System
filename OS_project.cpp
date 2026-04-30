@@ -9,13 +9,13 @@ using namespace std;
 
 int main() {
      
-	//Virtual_Memory_manager Sherlock; 
-	//cout << "this is the one with FIFO\n";
-	//Sherlock.Walker();
-	//cout << "This is the one with LRU\n";
-	//Sherlock.Runner();
-	//cout << "This is the one with OPT\n";
-	//Sherlock.SPRINTER();
+	Virtual_Memory_manager Sherlock; 
+	cout << "this is the one with FIFO\n";
+	Sherlock.Walker();
+	cout << "This is the one with LRU\n";
+	Sherlock.Runner();
+	cout << "This is the one with OPT\n";
+	Sherlock.SPRINTER_OPT_TLB();
 
 	Drawer Sherlock1;
 	cout << "this is the one with FIFO\n";
@@ -23,6 +23,6 @@ int main() {
 	cout << "This is the one with LRU\n";
 	Sherlock1.Runner1();
 	cout << "This is the one with OPT\n";
-	Sherlock1.SPRINTER1();
+	Sherlock1.SPRINTER_OPT_TLB1();
 
 }
