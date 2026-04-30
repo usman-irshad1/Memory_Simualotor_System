@@ -48,8 +48,8 @@ The simulator processes a stream of hexadecimal virtual addresses, translates th
 │                     │             │                     │
 │              ┌──────▼──────┐      │                     │
 │              │     TLB     │      │                     │
-│              │  (4 entries)│      │                     │
-│              └──┬─────┬───┘       │                     │
+│              | (has algos) │      │                     │
+│              └──┬─────┬─── ┘      │                     │
 │            Hit  │     │ Miss      │                     │
 │              ┌──▼─────▼───┐       │                     │
 │              │ Page Table │       │                     │
