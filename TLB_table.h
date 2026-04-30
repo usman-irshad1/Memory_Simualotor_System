@@ -4,6 +4,7 @@
 #include <list>
 #include <algorithm>
 #include <cmath>
+#include <vector>
 #include "FileConfiguration.h"
 
 using namespace std;
@@ -25,6 +26,7 @@ class TLB {
 	list<unsigned long long> index_for_FIFO;
 	unordered_map<unsigned long long, typename list<unsigned long long>::iterator> LRU_map;
 	list<unsigned long long> LRU_queue;
+	vector<unsigned long long> OPT_lookahead_buffer;  // future VPN sequence for OPT
 	
 
 public:
@@ -40,6 +42,11 @@ public:
 	void Insert_with_FIFO_algo(unsigned long long virtual_address_key, unsigned long long physical_memory_value, bool valid_bit_value);
 
 	void insert_with_LRU_algo(unsigned long long virtual_address_key, unsigned long long physical_memory_frame, bool valid_bit_value);
+
+	// --- OPT Algorithm (standalone with its own lookahead) ---
+	void OPT_LOOKAHEAD_INSERTION(FileConfiguration& config);  // builds the TLB's own future-VPN buffer
+	void insert_with_OPT_algo(unsigned long long virtual_address_key, unsigned long long physical_memory_frame, bool valid_bit_value, size_t current_index);
+	bool findOPT_TLB(unsigned long long virtual_address_key, unsigned long long& physical_memory_value);
 
 	bool find(unsigned long long virtual_address_key, unsigned long long& physical_memory_value);
 

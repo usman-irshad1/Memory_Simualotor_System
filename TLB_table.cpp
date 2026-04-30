@@ -196,6 +196,90 @@ TLB::TLB(FileConfiguration& config) {
 	}
 
 
+	// ========================  OPT  (standalone TLB)  ========================
+
+	void TLB::OPT_LOOKAHEAD_INSERTION(FileConfiguration& config) {
+		OPT_lookahead_buffer.clear();
+		for (auto it = config.actual_adress.begin(); it != config.actual_adress.end(); it++) {
+			OPT_lookahead_buffer.push_back(config.getVirtual_page_number(*it));
+		}
+	}
+
+	bool TLB::findOPT_TLB(unsigned long long virtual_address_key, unsigned long long& physical_memory_value) {
+		request++;
+		if (table.find(virtual_address_key) != table.end()) {
+			if (table.at(virtual_address_key).valid_bit) {
+				physical_memory_value = table.at(virtual_address_key).physical_memory;
+				tlb_hits++;
+				return true;
+			}
+			else {
+				tlb_misses++;
+				return false;
+			}
+		}
+		else {
+			tlb_misses++;
+			return false;
+		}
+	}
+
+	void TLB::insert_with_OPT_algo(unsigned long long virtual_address_key,
+		unsigned long long physical_memory_frame,
+		bool valid_bit_value,
+		size_t current_index) {
+		Value v;
+		v.physical_memory = physical_memory_frame;
+		v.valid_bit = valid_bit_value;
+
+		if (table.find(virtual_address_key) != table.end()) {
+			table[virtual_address_key] = v;
+			return;
+		}
+
+		if (table.size() < cap) {
+			table[virtual_address_key] = v;
+			count++;
+			return;
+		}
+
+		// ---- TLB is full: find the entry used FARTHEST in the future ----
+		unsigned long long victim_vpn = table.begin()->first;
+		size_t max_distance = 0;
+		bool found_never_used = false;
+
+		for (auto const& [vpn_in_tlb, val] : table) {
+			bool will_be_used = false;
+			size_t distance = 0;
+
+			for (size_t j = current_index + 1; j < OPT_lookahead_buffer.size(); j++) {
+				if (OPT_lookahead_buffer[j] == vpn_in_tlb) {
+					distance = j - current_index;
+					will_be_used = true;
+					break;
+				}
+			}
+
+			if (!will_be_used) {
+				victim_vpn = vpn_in_tlb;
+				found_never_used = true;
+				break;
+			}
+			else if (distance > max_distance) {
+				max_distance = distance;
+				victim_vpn = vpn_in_tlb;
+			}
+		}
+
+		int idx = getVPNIndex(victim_vpn);
+		if (idx != -1) {
+			lastEvictedSlot = idx;
+		}
+
+		table.erase(victim_vpn);
+		table[virtual_address_key] = v;
+		count++;
+	}
 
 
 
