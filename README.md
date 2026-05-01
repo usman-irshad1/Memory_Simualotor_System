@@ -144,11 +144,15 @@ $$EAT = \frac{(Req \times 1ns) + (Miss \times 10ns) + (Reads \times Lat) + (Writ
 
 
 **GUI OUTPUT**
+For this data
+<img width="1291" height="664" alt="image" src="https://github.com/user-attachments/assets/825d35cc-e2c1-48e0-8436-d0a727908f23" />
+**using 4 Page Frames**
 For FIFO:
-   <img width="1198" height="835" alt="image" src="https://github.com/user-attachments/assets/a433b057-2621-418e-a7de-4a69d9d3acb4" />
+  <img width="1127" height="781" alt="image" src="https://github.com/user-attachments/assets/b5ab213b-6d02-4ed5-acac-02e52d52217c" />
 For LRU:
-   <img width="1193" height="835" alt="image" src="https://github.com/user-attachments/assets/232974b2-fe8b-4b99-a04a-5ef854943688" />
+   <img width="1105" height="780" alt="image" src="https://github.com/user-attachments/assets/8fc4559b-e34f-4c39-8b35-85af22b23fe1" />
 For OPT:
-   <img width="1198" height="835" alt="image" src="https://github.com/user-attachments/assets/9d6ca13d-151d-443d-b409-1e34b80267df" />
+   <img width="1113" height="766" alt="image" src="https://github.com/user-attachments/assets/92c2eca2-4a25-4c12-892d-6858a68b5eba" />
+
 
 
