@@ -146,7 +146,8 @@ $$EAT = \frac{(Req \times 1ns) + (Miss \times 10ns) + (Reads \times Lat) + (Writ
 **GUI OUTPUT**
 For this data
 <img width="1291" height="664" alt="image" src="https://github.com/user-attachments/assets/825d35cc-e2c1-48e0-8436-d0a727908f23" />
-**using 4 Page Frames**
+                                                      **using 4 Page Frames**
+
 For FIFO:
   <img width="1127" height="781" alt="image" src="https://github.com/user-attachments/assets/b5ab213b-6d02-4ed5-acac-02e52d52217c" />
 For LRU:
